@@ -1,0 +1,4 @@
+type BalanceOfEntity @entity {
+  id: ID!
+  balanceOf: BigInt!
+}

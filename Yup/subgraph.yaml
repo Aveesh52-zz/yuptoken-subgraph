@@ -1,0 +1,23 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Yup
+    network: mumbai
+    source:
+      address: "0x4Fd86d504623f9A76bA65Ce6C252715c5D348661"
+      abi: Yup
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - BalanceOf
+      abis:
+        - name: Yup
+          file: ./abis/Yup.json
+      eventHandlers:
+        - event: BalanceOf(indexed address)
+          handler: handleBalanceOf
+      file: ./src/mapping.ts
